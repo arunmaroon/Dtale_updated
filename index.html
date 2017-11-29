@@ -1,0 +1,237 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>DTALE Design Studio</title>
+    <link rel="icon" href="images/dtalefavicon.png" type="image/png" sizes="16x16">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/jquery.fullpage.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/jquery.fullpage.js" ></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/formvalidator.js"></script>
+    <script src="js/custom.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#fullpage').fullpage({
+                scrollOverflow: true
+            });
+        });
+
+
+        $(function () {
+
+            'use strict';
+
+            $.fn.validator.setDefaults({
+                trigger: 'input change',
+                success: function (e) {
+                    $(this).removeClass('erroricon');
+                },
+                error: function (e) {
+                    $(this).addClass('erroricon');
+                }
+            });
+
+            var $form = $('.contact_form form');
+            var $inputs = $form.find('input');
+            var $selects = $form.find('select');
+            var textareas = $form.find('textarea');
+            var $submit = $form.find(':submit');
+
+            $inputs.validator();
+
+            $submit.click(function (e) {
+                var validity = [];
+
+                $inputs.each(function () {
+                    validity.push($(this).validator('isValid'));
+                });
+                $selects.each(function () {
+                    validity.push($(this).validator('isValid'));
+                });
+                textareas.each(function () {
+                    validity.push($(this).validator('isValid'));
+                });
+                // if (document.getElementById('project').value== "service2")
+                // {
+                //     $('#project').addClass('erroricon');
+                //     return false;
+                // }
+                if ($.inArray(false, validity) !== -1) {
+                    e.preventDefault();
+                    return false;
+                }
+            });
+        });
+
+    </script>
+</head>
+<body class="landingpage">
+    <!-- Header -->
+    <div class="main homepage_header">
+        <div id="header" class="content"></div>
+          <div id="fullpage">
+            <section class="section intialpage">
+                <div class="content">
+                    <div class="page_content">
+                        <div class="flipcart">
+                            <img src="images/flipcart.svg">
+                        </div>
+                    </div>
+                    <div class="page_content1">
+                        <div class="subcontainer1">
+                            <h1><span class="light"> ekart </span><br>Helping Flipkart Optimise Logistics</h1>
+                            <a href="flipcart.html"><button class="view_button">VIEW</button></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="content">
+                    <div class="page_content">
+                        <div class="flipcart">
+                            <img src="images/sap_localization.svg">
+                        </div>
+                    </div>
+                    <div class="page_content1">
+                        <div class="subcontainer1"> 
+                            <h1><span class="light"> SAP </span><br>Branding SAP Localisation Hub</h1>
+                            <a href="sap_localization.html"><button class="view_button">VIEW</button></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="content">
+                    <div class="page_content">
+                        <div class="flipcart">
+                            <img src="images/alore.svg">
+                        </div>
+                    </div>
+                    <div class="page_content1">
+                        <div class="subcontainer1">
+                            <h1><span class="light">Alore </span><br>Improve productivity, that translates into growth</h1>
+                            <a href="alore.html"><button class="view_button">VIEW</button></a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <section class="section">
+                <div class="content">
+                    <div class="page_content">
+                        <div class="flipcart">
+                            <img src="images/cognihealth.svg">
+                        </div>
+                    </div>
+                    <div class="page_content1">
+                        <div class="subcontainer1">
+                            <h1><span class="light">CogniHealth</span> <br>Simplifying <br> Dementia Care</h1>
+                            <a href="cognihealth.html"><button class="view_button">VIEW</button></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="content">
+                    <div class="page_content">
+                        <div class="flipcart">
+                            <img src="images/bordo.svg">
+                        </div>
+                    </div>
+                    <div class="page_content1">
+                        <div class="subcontainer1">
+                            <h1><span class="light">Bordo</span><br> Aggregating Ad Spaces Online </h1>
+                            <a href="bordo.html"><button class="view_button" >VIEW</button></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="content">
+                    <div class="page_content">
+                        <div class="flipcart">
+                            <img src="images/jiyo.svg">
+                        </div>
+                    </div>
+                    <div class="page_content1">
+                        <div class="subcontainer1">
+                            <h1>
+                                 <span class="light">Jiyo </span><br>E-Commerce For A Personal Well Being</h1>
+                                 <a href="jiyo.html"><button class="view_button">VIEW</button></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="content">
+                    <!--<div class="contactus">-->
+                        <!--<h2 class="work_with_us_hdr1">Work with us</h2>-->
+                        <!--<form id="form" role="form"  class="">-->
+                            <!--<h4 class="work_with_us_hdr2">About Yourself</h4>-->
+                            <!--<div class="row">-->
+                                <!--<input type="text" placeholder="NAME" class="input1" name="name" required>-->
+                                <!--<input type="text" placeholder="COMPANY" class="input1" name="company" required>-->
+                            <!--</div>-->
+                            <!--<div class="row">-->
+                                <!--<input type="email" placeholder="EMAIL" class="input1" name="email" required>-->
+                                <!--<input placeholder="PHONE" class="input1" type="tel"  name="mobile"  required>-->
+                            <!--</div>-->
+                            <!--<h4 class="work_with_us_hdr2">About Yourself</h4>-->
+                            <!--<div class="row">-->
+                                <!--<select  class="input1" name="services"  required>-->
+                                    <!--<option value="service2">Branding & Creatie Design</option>-->
+                                    <!--<option value="service1">UI/UX Design</option>-->
+                                    <!--<option value="service3">Website Design</option>-->
+                                <!--</select>-->
+                                <!--<select  class="input1" id="project1" name="services">-->
+                                    <!--<option value="service2">service1</option>-->
+                                    <!--<option value="service1">service2</option>-->
+                                    <!--<option value="service3">service3</option>-->
+                                <!--</select>-->
+                            <!--</div>-->
+                            <!--<div class="row">-->
+                                <!--<textarea class ="contactus_textarea" placeholder="BRIEF" required> </textarea>-->
+                            <!--</div>-->
+                            <!--<button  type="button "  class="send_button js-submit">SEND</button>-->
+                        <!--</form>-->
+                    <!--</div>-->
+                    <div class="contact_form">
+                        <h1>Work with us</h1>
+                        <form id="form" role="form"  class="form_elements">
+                            <div class="about_yourself">
+                                <h3>About Yourself</h3>
+                                <input class="form_input1 " id="name"   placeholder="NAME" type="text" name="name" required>
+                                <input class="form_input1"  id="company" placeholder="COMPANY" type="text" name="company" required >
+                                <input class="form_input1"   id="email" placeholder="EMAIL" type="email"  name="email" required>
+                                <input class="form_input1"  id="phone" placeholder="PHONE" type="tel"  name="mobile"  required>
+                            </div>
+                            <div class="about_project">
+                                <h3>About Yourself</h3>
+                                <select id="project" name="services"  required>
+                                <option value="service2">Branding & Creatie Design</option>
+                                <option value="service1">UI/UX Design</option>
+                                <option value="service3">Website Design</option>
+                            </select>
+                                <select id="project1" name="Budget" required>
+                                <option value="service2">1000$</option>
+                                <option value="service2">1000$ - 10000$</option>
+                                <option value="service2">Above 10000$</option>
+                            </select>
+                                <textarea class="textarea" name="" id="" placeholder="BRIEF"  required></textarea>
+                            </div>
+                            <button type="button "  class="js-submit" >SEND</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <section class="section  fp-auto-height" id="dynamic_footer">
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>
